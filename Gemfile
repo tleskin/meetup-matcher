@@ -14,8 +14,11 @@ gem 'omniauth-twitter'
 gem 'figaro'
 gem 'hurley'
 gem 'twitter'
+gem 'tf-idf-similarity'
+gem 'unicode_utils'
 
 group :development, :test do
+  gem 'pry'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'web-console', '~> 2.0'
