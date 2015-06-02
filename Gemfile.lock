@@ -69,6 +69,7 @@ GEM
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     hashie (3.4.1)
+    hurley (0.1)
     i18n (0.7.0)
     jbuilder (2.2.16)
       activesupport (>= 3.0.0, < 5)
@@ -190,6 +191,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   figaro
   foundation-rails
+  hurley
   jbuilder (~> 2.0)
   jquery-rails
   launchy
