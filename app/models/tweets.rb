@@ -1,3 +1,7 @@
+require 'matrix'
+require 'tf-idf-similarity'
+require 'unicode_utils'
+
 class Tweets < OpenStruct
   def self.service
     @service ||= TwitterService.new
@@ -5,15 +9,16 @@ class Tweets < OpenStruct
 
   def self.tweets(user)
     service.user_tweets(user)
+
   end
 
   def self.word_wizard(tweets, current_user)
 
-    document1 = TfIdfSimilarity::Document.new(tweets(current_user).join)
+    document1 = TfIdfSimilarity::Document.new(tweets.join)
 
-    text = document1.term_counts
 
-    all_words = Hash[text.sort_by{|k, v| v}.reverse].keys
+
+    all_words = Hash[document1.term_counts.sort_by{|k, v| v}.reverse].keys
 
     (all_words - stop_words).take(30)
   end
