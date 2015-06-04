@@ -10,8 +10,10 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class="active"> <%= link_to "Meetups", meetup_index_path %></li>
-      <li><%= link_to "Logout", logout_path, method: :delete %></li>
+      <% if current_user %>
+        <li class="active"> <%= link_to "Meetups", meetup_index_path %></li>
+        <li><%= link_to "Logout", logout_path, method: :delete %></li>
+      <% end %>
       <!-- <li class="has-dropdown">
         <a href="#">Right Button Dropdown</a>
         <ul class="dropdown">
@@ -26,7 +28,7 @@
       <% if current_user %>
         <li><%= link_to "My Meetups", user_path(1) %></li>
         <li><%= link_to "My Tweets", tweets_path %></li>
-      <% end %> 
+      <% end %>
     </ul>
   </section>
 </nav>

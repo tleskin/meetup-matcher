@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
     user = User.find_or_create_from_auth(auth)
     if user
       session[:user_id] = user.id
-      redirect_to user_path(user)
+
+      redirect_to meetup_index_path
     else
       redirect_to root_path
     end
