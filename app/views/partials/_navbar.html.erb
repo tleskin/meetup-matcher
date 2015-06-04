@@ -23,7 +23,10 @@
 
     <!-- Left Nav Section -->
     <ul class="left">
-      <li><%= link_to "My Meetups", user_path(1) %></li>
+      <% if current_user %>
+        <li><%= link_to "My Meetups", user_path(1) %></li>
+        <li><%= link_to "My Tweets", tweets_path %></li>
+      <% end %> 
     </ul>
   </section>
 </nav>
