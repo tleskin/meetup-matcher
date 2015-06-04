@@ -16,7 +16,7 @@ class TwitterService
 
     def user_tweets(user)
       tweets = []
-      client.user_timeline(user, count: 50).each do |tweet|
+      client.user_timeline(user, count: 100).each do |tweet|
         tweets << tweet.text
       end
       tweets
@@ -32,4 +32,5 @@ class TwitterService
       # token = UnicodeUtils.each_word(text).to_a - stop_words
       # tokens = UnicodeUtils.each_word(text) - ['and', 'the', 'to']
     end
+
 end

@@ -1,0 +1,6 @@
+<div class="tweets">
+  <h1>Most popular words from <%= current_user.nickname  %>'s tweets:</h1>
+  <% @top_20.each do |word| %>
+    <h3><%= word  %></h3>
+  <% end %>
+</div>
