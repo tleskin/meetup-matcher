@@ -15,11 +15,7 @@ class TwitterService
     end
 
     def user_tweets(user)
-      tweets = []
-      client.user_timeline(user, count: 100).each do |tweet|
-        tweets << tweet.text
-      end
-      tweets
+      client.user_timeline(user, count: 100).map(&:text)
     end
 
     def word_wizard(tweet)

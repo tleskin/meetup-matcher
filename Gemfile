@@ -24,4 +24,10 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'launchy'
   gem 'capybara'
+  gem 'vcr'
+  gem 'simplecov'
+end
+  
+group :test do   
+  gem 'webmock'
 end
