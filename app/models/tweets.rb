@@ -13,10 +13,9 @@ class Tweets < OpenStruct
   end
 
   def self.word_wizard(tweets, current_user)
+    tweets = tweets.join.split(",").reject {|word| word.include?("@")}
 
     document1 = TfIdfSimilarity::Document.new(tweets.join)
-
-
 
     all_words = Hash[document1.term_counts.sort_by{|k, v| v}.reverse].keys
 
@@ -32,7 +31,7 @@ class Tweets < OpenStruct
 
   def self.remove_tweets_with_length_less_than_three
     @tweets.reject do |tweet|
-      tweet.length < 3 
+      tweet.length < 3
     end.take(30)
   end
 
