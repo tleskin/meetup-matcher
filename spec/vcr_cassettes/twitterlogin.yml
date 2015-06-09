@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/oauth/request_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_callback="http%3A%2F%2Fwww.example.com%2Fauth%2Ftwitter%2Fcallback",
+        oauth_consumer_key="nd2WlUvLB5Nj7sFx5oR8BphXD", oauth_nonce="fjRj9DlWE3UAHau0cPwUWb2sKZZcgY1hlbiODnxDtw",
+        oauth_signature="AMaCJFqAfNG7SzhNni4jSb%2FrioY%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1433446834", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Length:
+      - '128'
+      Content-Security-Policy:
+      - default-src 'none'; connect-src 'self'; font-src https://abs.twimg.com data:;
+        frame-src 'self' twitter:; img-src https://abs.twimg.com https://*.twimg.com
+        https://pbs.twimg.com data:; media-src 'none'; object-src 'none'; script-src
+        https://abs.twimg.com https://abs-0.twimg.com; style-src https://abs.twimg.com
+        https://abs-0.twimg.com; report-uri https://twitter.com/i/csp_report?a=NVQWGYLXFVWG6Z3JNY%3D%3D%3D%3D%3D%3D&ro=false;
+      Content-Type:
+      - text/html;charset=utf-8
+      Date:
+      - Thu, 04 Jun 2015 19:40:34 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Thu, 04 Jun 2015 19:40:34 GMT
+      Ml:
+      - S
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A143344683463784802; Domain=.twitter.com; Path=/; Expires=Sat,
+        03-Jun-2017 19:40:34 UTC
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - 831c2e6e951f0bcd4697d6b065aeb327
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Response-Time:
+      - '52'
+      X-Transaction:
+      - c35af67a42bd64dc
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Ua-Compatible:
+      - IE=edge,chrome=1
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: oauth_token=hjuJrAAAAAAAf-oCAAABTcAW4fo&oauth_token_secret=RLmaEhEubxYmOPz7vp6QkZwQWb7qvEk0&oauth_callback_confirmed=true
+    http_version: 
+  recorded_at: Thu, 04 Jun 2015 19:40:35 GMT
+recorded_with: VCR 2.9.3
