@@ -2,11 +2,10 @@ class MeetupController < ApplicationController
   respond_to :json, :xml 
 
   def index
-    # call meetup
+    tweets = Tweets.tweets(current_user.nickname)
+    top_30 = Tweets.word_wizard(tweets, current_user)
     meetup = MeetupService.new
-    meetup.events(params["lat"], params["lon"])
-    
-    # respond_with #user lat and lon, user tweets?
+    meetup.events(session[:lat], session[:lon])
   end
 
   def show
