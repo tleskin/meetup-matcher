@@ -16,6 +16,7 @@ gem 'hurley'
 gem 'twitter'
 gem 'tf-idf-similarity'
 gem 'unicode_utils'
+gem 'responders'
 
 group :development, :test do
   gem 'pry'
