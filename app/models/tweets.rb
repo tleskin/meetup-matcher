@@ -32,7 +32,7 @@ class Tweets < OpenStruct
   def self.remove_tweets_with_length_less_than_three
     @tweets.reject do |tweet|
       tweet.length < 3
-    end.take(30)
+    end.take(5)
   end
 
 end

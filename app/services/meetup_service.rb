@@ -6,12 +6,10 @@ class MeetupService
     @connection = Hurley::Client.new("https://api.meetup.com")
   end
 
-  def meetups
-    parse(connection.get("/find/groups?key=#{ENV["meetup_key"]}&sign=true").body)
-  end
-
-  def events(latitude, longitude)
-    parse(connection.get("/2/open_events?key=#{ENV["meetup_key"]}&sign=true&photo-host=public&lat=#{latitude}&text=ruby&lon=#{longitude}").body)
+  def events(latitude, longitude, top_tweets)
+    @events = top_tweets.map do |tweet|
+      parse(connection.get("/2/open_events?key=#{ENV["meetup_key"]}&sign=true&photo-host=public&lat=#{latitude}&text=#{tweet}&lon=#{longitude}").body)
+    end
   end
 
   private
