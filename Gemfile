@@ -21,6 +21,7 @@ gem 'unicode_utils'
 gem 'responders'
 gem 'sidekiq'
 gem 'sinatra'
+gem "rails_12factor", group: :production
 
 group :development, :test do
   gem 'pry'
