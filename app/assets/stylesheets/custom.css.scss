@@ -1,3 +1,13 @@
+div.alert {
+ border: 2px solid #aaa;
+ padding: 10px;
+}
+
+div.flash.error {
+ border: 2px solid red; color: red;
+ text-align: center;
+}
+
 .tweets {
   text-align: center;
 }
@@ -89,6 +99,7 @@
 }
 
 .group_image {
-  max-width: 200px;
-  float: left; 
+  max-width: 300px;
+  max-height: 200px;
+  // float: left;
 }
