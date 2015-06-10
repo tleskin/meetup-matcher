@@ -1,13 +1,9 @@
 <h1 class ="header">My Meetups</h1>
-<div class='meetups'>
-  <h1><%= link_to "Meetup 1", meetup_path(1) %></h1>
-  <p>Single-origin coffee semiotics Etsy, hella Neutra mustache ugh.</p>
-</div>
 
-
+<% current_user.favorites.each do |favorite| %>
 <div class='meetups'>
-  <h1><%= link_to "Meetup 2", meetup_path(1)  %></h1>
-  <p>
-    Meditation kogi before they sold out hashtag, art party pickled ennui.
-  </p>
+    <%= image_tag(favorite.photo_url, class: "group_image") %>
+    <h1><%= link_to favorite.name, "http://www.meetup.com/#{favorite.url_name}" %></h1>
+    <p><%= button_to "Remove From Favorites", favorite_path(id: favorite.id), class:"button radius", method: :delete %></p>
 </div>
+  <% end %>

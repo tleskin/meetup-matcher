@@ -1,7 +1,8 @@
 <% @groups.each do |group| %>
   <div class='meetups'>
-     <%= image_tag(group.photo_url, class: "group_image") %>
+     <p><%= image_tag(group.photo_url, class: "group_image") %></p>
       <h1><%= link_to group.name, "http://www.meetup.com/#{group.url_name}" %></h1>
-    <p><a href="#" class="button radius">Add</a></p>
+    <p><%= button_to "Add To Favorites", favorite_path(id: group.id), class:"button radius", method: :post %></p>
+    <p><%= button_to "Visit on Meetup.com", "http://www.meetup.com/#{group.url_name}", class:"button radius", method: :get %></p>
   </div>
 <% end %>
