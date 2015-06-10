@@ -10,24 +10,26 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
+
+      <li class="has-dropdown">
+        <a href="#">Meetups</a>
+        <ul class="dropdown">
+          <li><%= link_to "Recommended", meetup_index_path %></li>
+          <li><%= link_to "Favorites", user_path(1) %></li>
+          <!-- <li class="active"><a href="#">Favorites</a></li> -->
+        </ul>
+      </li>
       <% if current_user %>
-        <li class="active"> <%= link_to "Nearby Meetups", meetup_index_path %></li>
+        <!-- <li class="active"> <%= link_to "Nearby Meetups", meetup_index_path %></li> -->
         <li><%= link_to "Logout", logout_path, method: :delete %></li>
       <% end %>
-      <!-- <li class="has-dropdown">
-        <a href="#">Right Button Dropdown</a>
-        <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-          <li class="active"><a href="#">Active link in dropdown</a></li>
-        </ul>
-      </li> -->
     </ul>
 
     <!-- Left Nav Section -->
-    <ul class="left">
+    <!-- <ul class="left">
       <% if current_user %>
         <li><%= link_to "My Meetups", user_path(1) %></li>
       <% end %>
-    </ul>
+    </ul> -->
   </section>
 </nav>
