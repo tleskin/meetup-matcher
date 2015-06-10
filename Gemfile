@@ -22,6 +22,8 @@ gem 'responders'
 gem 'sidekiq'
 gem 'sinatra'
 gem "rails_12factor", group: :production
+gem 'newrelic_rpm'
+
 
 group :development, :test do
   gem 'pry'
@@ -33,6 +35,11 @@ group :development, :test do
   gem 'vcr'
   gem 'simplecov'
 end
+
+group :production do
+  gem 'unicorn'
+end
+
 
 group :test do
   gem 'webmock'
