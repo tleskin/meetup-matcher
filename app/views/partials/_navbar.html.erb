@@ -1,7 +1,11 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="/">MeetupMatcher</a></h1>
+      <% if current_user %>
+        <h1><a href="/meetup">MeetupMatcher</a></h1>
+      <% else %>
+        <h1><a href="/">MeetupMatcher</a></h1>
+      <% end %>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -11,15 +15,15 @@
     <!-- Right Nav Section -->
     <ul class="right">
 
+      <% if current_user %>
       <li class="has-dropdown">
         <a href="#">Meetups</a>
         <ul class="dropdown">
           <li><%= link_to "Recommended", meetup_index_path %></li>
-          <li><%= link_to "Favorites", user_path(1) %></li>
+          <li><%= link_to "Favorites", current_user %></li>
           <!-- <li class="active"><a href="#">Favorites</a></li> -->
         </ul>
       </li>
-      <% if current_user %>
         <!-- <li class="active"> <%= link_to "Nearby Meetups", meetup_index_path %></li> -->
         <li><%= link_to "Logout", logout_path, method: :delete %></li>
       <% end %>

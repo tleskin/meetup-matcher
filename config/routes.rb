@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
 
+
   root "home#index"
+
+
   get '/', to:"home#index"
   delete '/logout', to: 'sessions#destroy'
   resources :user, only: ["show"]
