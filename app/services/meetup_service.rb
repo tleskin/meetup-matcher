@@ -6,30 +6,37 @@ class MeetupService
     @connection = Hurley::Client.new("https://api.meetup.com")
   end
 
-  def events(latitude, longitude, top_tweets)
-    @responses = top_tweets.flat_map do |word|
-      parse(connection.get("/2/open_events?key=#{ENV["meetup_key"]}&sign=true&photo-host=public&lat=#{latitude}&text=#{word}&lon=#{longitude}").body)
+  def events(latitude, longitude, word)
+    response = connection.get("/2/open_events?key=#{ENV["meetup_key"]}&sign=true&photo-host=public&lat=#{latitude}&text=#{word}&lon=#{longitude}&page=10")
+    response_body = parse(response.body)
+
+    if response.status_code == 200
+      response_body[:results]
+    elsif response.status_code == 429
+      max_number_of_requests = response.header["X-RateLimit-Limit"]
+      requests_remaining = response.header["X-RateLimit-Remaining"]
+      seconds_until_reset = response.header["X-RateLimit-Reset"]
+      message = [
+        "Rate limit exceeded.",
+        "Max # of requests: #{max_number_of_requests}",
+        "# of requests remaining: #{requests_remaining}",
+        "# of seconds until reset: #{seconds_until_reset}"
+      ].join("\n")
+      raise(message)
+    else
+      raise "Failed to fetch events: #{response_body}"
     end
   end
 
-  def event_results
-    @responses.flat_map {|response| response[:results] }
-  end
+  def group(url_name)
+    response = connection.get("/2/groups?key=#{ENV["meetup_key"]}&sign=true&photo-host=public&group_urlname=#{url_name}")
+    response_body = parse(response.body)
 
-  def groups
-    event_results.map { |result| result[:group] }
-  rescue NoMethodError
-    byebug
-  end
-
-  def all_groups
-    groups[0..0].flat_map do |group|
-      parse(connection.get("/2/groups?key=#{ENV["meetup_key"]}&sign=true&photo-host=public&group_urlname=#{group[:urlname]}").body)
+    if response.status_code == 200
+      response_body[:results].first
+    else
+      raise "Failed to fetch events: #{response_body}"
     end
-  end
-
-  def group_results
-    all_groups.map { |group| group[:results] }
   end
 
   private

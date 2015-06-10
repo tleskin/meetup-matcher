@@ -17,6 +17,8 @@ gem 'twitter'
 gem 'tf-idf-similarity'
 gem 'unicode_utils'
 gem 'responders'
+gem 'sidekiq'
+gem 'sinatra'
 
 group :development, :test do
   gem 'pry'

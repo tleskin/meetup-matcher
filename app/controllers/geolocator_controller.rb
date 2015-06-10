@@ -1,4 +1,5 @@
 class GeolocatorController < ApplicationController
+  skip_before_action :authorize!
   respond_to :json
 
   def create
