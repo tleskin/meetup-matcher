@@ -1,26 +1,11 @@
-<div class="meetup-index">
-  <h2>Your current suggested meetups:</h2>
-
-  <div class='meetups'>
-    <h1><%= link_to "Meetup 1", meetup_path(1) %></h1>
-    <p>Single-origin coffee semiotics Etsy, hella Neutra mustache ugh.</p>
-    <a href="#" class="button radius">Add</a>
-  </div>
-
-
-  <div class='meetups'>
-    <h1><%= link_to "Meetup 2", meetup_path(1)  %></h1>
-    <p>
-      Meditation kogi before they sold out hashtag, art party pickled ennui.
-    </p>
-    <a href="#" class="button radius">Add</a>
-  </div>
-
-  <div class='meetups'>
-    <h1><%= link_to "Meetup 3", meetup_path(1)  %></h1>
-    <p>
-      Blue Bottle cold-pressed shabby chic, Kickstarter stumptown cronut mustache pickled typewriter single-origin coffee direct trade.
-    </p>
-    <a href="#" class="button radius">Add</a>
-  </div>
-</div>
+<% cache(action: "index") do %>
+  <% @groups.each do |group| %>
+    <div class='meetups'>
+      <% group.map do |group| %>
+       <%= image_tag(group[:group_photo][:photo_link], class: "group_image") %>
+        <h1><%= link_to group[:name], "http://www.meetup.com/#{group[:urlname]}" %></h1>
+      <% end %>
+      <p><a href="#" class="button radius">Add</a></p>
+    </div>
+  <% end %>
+<% end %>

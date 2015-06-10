@@ -6,6 +6,7 @@ class MeetupController < ApplicationController
     top_30 = Tweets.word_wizard(tweets, current_user)
     meetup = MeetupService.new
     meetup.events(session[:lat], session[:lon], top_30)
+    @groups = meetup.group_results
   end
 
   def show
