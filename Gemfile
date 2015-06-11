@@ -23,7 +23,7 @@ gem 'sidekiq'
 gem 'sinatra'
 gem "rails_12factor", group: :production
 gem 'newrelic_rpm'
-
+gem "skylight"
 
 group :development, :test do
   gem 'pry'

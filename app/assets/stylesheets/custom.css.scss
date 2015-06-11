@@ -1,3 +1,10 @@
+html, body {
+  background: #C9FFD5;
+  font-family: Helvetica;
+}
+
+
+
 div.alert {
  border: 2px solid #aaa;
  padding: 10px;
@@ -21,7 +28,7 @@ div.flash.error {
   position: relative;
   width: 100%;
   height: 100%;
-  background: image-url('landing_page.jpg') no-repeat center center scroll;
+  background: image-url('meetup2.jpg') no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -30,7 +37,8 @@ div.flash.error {
 }
 
 .welcome {
-  background: #545454;
+  font-family: Helvetica;
+  background: #004056;
   color: white;
   text-align: center;
   border-radius:5px;
@@ -38,7 +46,7 @@ div.flash.error {
   display: block;
   text-align: center;
   margin: 400px;
-  margin-top: 200px;
+  margin-top: 100px;
   padding-bottom: 50px;
   padding: 50px 50px 50px 50px;
 }
@@ -50,7 +58,7 @@ div.flash.error {
 }
 
 .meetups {
-  background: #545454;
+  background: #004056;
   color: white;
   text-align: center;
   border-radius:5px;
@@ -70,6 +78,7 @@ div.flash.error {
 }
 
 .show-meetup {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   background: #545454;
   color: white;
   text-align: center;
