@@ -20,8 +20,7 @@
         <a href="#">Meetups</a>
         <ul class="dropdown">
           <li><%= link_to "Recommended", meetup_index_path %></li>
-          <li><%= link_to "Favorites", current_user %></li>
-          <!-- <li class="active"><a href="#">Favorites</a></li> -->
+          <li><%= link_to "Favorites", user_path(current_user.id) %></li>
         </ul>
       </li>
         <!-- <li class="active"> <%= link_to "Nearby Meetups", meetup_index_path %></li> -->
