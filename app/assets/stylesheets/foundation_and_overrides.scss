@@ -404,7 +404,7 @@ $font-smoothing: antialiased;
 // 04. Breadcrumbs
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-nav-classes: $include-html-classes;
+$include-html-nav-classes: $include-html-classes;
 
 // We use this to set the background color for the breadcrumb container.
 // $crumb-bg: scale-color($secondary-color, $lightness: 55%);
@@ -1412,10 +1412,10 @@ $topbar-bg: #004056;
 // $topbar-title-font-size: rem-calc(17);
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: white;
-// $topbar-link-color-hover: #FFFFCB;
+// $topbar-link-color: #fff;
+// $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: $white;
-// $topbar-link-color-active-hover: #FFFFCB;
+// $topbar-link-color-active-hover: #2C858D;
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
@@ -1433,11 +1433,11 @@ $topbar-bg: #004056;
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: #2C585D;
+$topbar-dropdown-bg: #2C858D;
 // $topbar-dropdown-link-color: #2C585D;
-// $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
-// $topbar-dropdown-link-bg: $oil;
-// $topbar-dropdown-link-bg-hover: $jet;
+// $topbar-dropdown-link-color-hover: #fff;
+$topbar-dropdown-link-bg: #2C858D;
+// $topbar-dropdown-link-bg-hover: #74CEB7;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
