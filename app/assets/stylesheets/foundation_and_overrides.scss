@@ -88,8 +88,8 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these to define default font stacks
 $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
+// $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+// $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
 $font-weight-normal: normal;
@@ -116,7 +116,7 @@ $jet         : #222222;
 $black       : #000000;
 
 // We use these as default colors throughout
-$primary-color: #008CBA;
+$primary-color: #fff;
 $secondary-color: #e7e7e7;
 $alert-color: #f04124;
 $success-color: #43AC6A;
@@ -124,8 +124,8 @@ $warning-color: #f08a24;
 $info-color: #a0d3e8;
 
 // We use these to control various global styles
-$body-bg: $white;
-$body-font-color: $jet;
+$body-bg: #74CEB7;
+$body-font-color: #fff ;
 $body-font-family: $font-family-sans-serif;
 $body-font-weight: $font-weight-normal;
 $body-font-style: normal;
@@ -1433,8 +1433,8 @@ $topbar-bg: #004056;
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
-// $topbar-dropdown-link-color: #FFFFCB;
+$topbar-dropdown-bg: #2C585D;
+// $topbar-dropdown-link-color: #2C585D;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 // $topbar-dropdown-link-bg: $oil;
 // $topbar-dropdown-link-bg-hover: $jet;

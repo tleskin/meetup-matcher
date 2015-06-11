@@ -1,3 +1,6 @@
+<h1 class ="header">Suggested Meetups:</h1>
+<h4 class ="sub-header">If no meetups show, please refresh the page in a couple seconds.</h3>
+
 <% @groups.each do |group| %>
   <div class='meetups'>
      <p><%= image_tag(group.photo_url, class: "group_image") %></p>

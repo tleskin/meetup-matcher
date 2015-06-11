@@ -1,9 +1,11 @@
 html, body {
-  background: #C9FFD5;
+  // background: #C9FFD5;
   font-family: Helvetica;
 }
 
-
+html {
+    background-color: #C9FFD !important;
+}
 
 div.alert {
  border: 2px solid #aaa;
@@ -104,7 +106,12 @@ div.flash.error {
 
 .header {
   text-align: center;
+  color: #fff;
+}
 
+.sub-header {
+  text-align: center;
+  color: #fff;
 }
 
 .group_image {
