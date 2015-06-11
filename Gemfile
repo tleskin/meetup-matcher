@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.2.2"
+
 gem 'rails', '4.2.1'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -16,6 +18,10 @@ gem 'hurley'
 gem 'twitter'
 gem 'tf-idf-similarity'
 gem 'unicode_utils'
+gem 'responders'
+gem 'sidekiq'
+gem 'sinatra'
+gem "rails_12factor", group: :production
 
 group :development, :test do
   gem 'pry'
@@ -24,4 +30,10 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'launchy'
   gem 'capybara'
+  gem 'vcr'
+  gem 'simplecov'
+end
+
+group :test do
+  gem 'webmock'
 end

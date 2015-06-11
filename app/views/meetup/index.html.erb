@@ -1,22 +1,8 @@
-<div class='meetups'>
-  <h1><%= link_to "Meetup 1", meetup_path(1) %></h1>
-  <p>Single-origin coffee semiotics Etsy, hella Neutra mustache ugh.</p>
-  <a href="#" class="button radius">Add</a>
-</div>
-
-
-<div class='meetups'>
-  <h1><%= link_to "Meetup 2", meetup_path(1)  %></h1>
-  <p>
-    Meditation kogi before they sold out hashtag, art party pickled ennui.
-  </p>
-  <a href="#" class="button radius">Add</a>
-</div>
-
-<div class='meetups'>
-  <h1><%= link_to "Meetup 3", meetup_path(1)  %></h1>
-  <p>
-    Blue Bottle cold-pressed shabby chic, Kickstarter stumptown cronut mustache pickled typewriter single-origin coffee direct trade.
-  </p>
-  <a href="#" class="button radius">Add</a>
-</div>
+<% @groups.each do |group| %>
+  <div class='meetups'>
+     <p><%= image_tag(group.photo_url, class: "group_image") %></p>
+      <h1><%= link_to group.name, "http://www.meetup.com/#{group.url_name}" %></h1>
+    <p><%= button_to "Add To Favorites", favorite_path(id: group.id), class:"button radius", method: :post %></p>
+    <p><%= button_to "Visit on Meetup.com", "http://www.meetup.com/#{group.url_name}", class:"button radius", method: :get %></p>
+  </div>
+<% end %>
